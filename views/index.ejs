@@ -1,0 +1,43 @@
+<html>
+    <div style="margin-right: 20%; margin-left: 20%;">
+        <img src="../public/images/logo.png" style="width: 50%; height: 15%; margin-right: 25%; margin-left: 25%;"/>
+        <div style="height: 25%; background-color: #DCA3FA; margin-bottom: 25; border:0.5px solid black;">
+            <h1 style="text-align: center;"> Search procedures by information systems</h1>
+            <form method="POST" action="/searchProcedures">
+                <input list="systems" name="system" id="system" style="margin-right: 30%; margin-left: 30%; width: 40%;">
+                <datalist id="systems">
+                    <% systems.forEach(function(system){ %>
+                        <option><%= system.name %></option>
+                    <% }) %>
+                </datalist>
+                <input type="submit" value="Search" style="margin-top: 40px; margin-right: 40%; margin-left: 40%; width: 20%;">
+            </form>
+        </div>    
+        <div style="height: 25%; background-color: #A3E6FA; margin-bottom: 25; border:0.5px solid black;">
+            <h1 style="text-align: center;"> Search information systems by executed procedures</h1>
+            <form method="POST" action="/searchIF">
+                <input list="procedures" name="procedure" id="procedure" style="margin-right: 30%; margin-left: 30%; width: 40%;">
+                <datalist id="procedures">
+                    <% procedures.forEach(function(procedure){ %>
+                        <option><%= procedure.name %></option>
+                    <% }) %>
+                </datalist>
+                <input type="submit" value="Search" style="margin-top: 40px; margin-right: 40%; margin-left: 40%; width: 20%;">
+            </form>
+        </div>
+        <div style=" height: 25%; background-color: #A3FAE6; margin-bottom: 25; border:0.5px solid black;">
+            <h1 style="text-align: center;"> Search procedure by synonym</h1>
+            <form method="POST" action="/searchSynonyms">
+                <input type="text" list="synonyms" name="synonym" id="synonym" style="margin-right: 30%; margin-left: 30%; width: 40%;">
+                <datalist id="synonyms" >
+                    <% synonyms.forEach(function(synonym){ %>
+                        <option><%= synonym.name %></option>
+                    <% }) %>
+                </datalist>
+                <input type="submit" value="Search" style="margin-top: 40px; margin-right: 40%; margin-left: 40%; width: 20%;">
+            </form>
+        </div>
+    </div>
+</html>
+
+

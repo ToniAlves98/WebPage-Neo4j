@@ -1,0 +1,19 @@
+<html>
+    <div style="margin-right: 20%; margin-left: 20%;">
+        <img src="../public/images/logo.png" style="width: 50%; height: 15%; margin-right: 25%; margin-left: 25%;"/>
+    </div>
+    <div style="margin-right: 30%; margin-left: 30%; width: 40%; height: 80%; background-color: #F7F7E0; border:0.5px 
+    solid black;">
+        <h1 style="text-align: center; margin-bottom: 30;">Search Results</h1>
+        <div style=" overflow-y: scroll; height:380px;">
+            <ul>
+                <% search.forEach(function(result){ %>
+                    <li><%= result.name %></option>
+                <% }) %>
+            </ul>  
+        </div>
+        <form method="GET" action="/"> 
+            <input value="Go Back" type="submit" style="position: absolute; width: 20%; margin-left: 10%; bottom:75px;">
+        </form>
+    </div>
+</html>
